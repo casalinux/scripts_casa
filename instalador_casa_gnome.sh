@@ -1,0 +1,27 @@
+mkdir -p casa-gnome/{DEBIAN,usr/local/bin}
+
+cat <<EOF > casa-gnome/DEBIAN/control
+Package: casa-gnome
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Casa Linux <casalinuxos@gmail.com>
+Description: Instalação mínima do GNOME
+EOF
+
+cat <<'EOF' > casa-gnome/usr/local/bin/casa-instalar.sh
+#!/bin/bash
+
+sudo apt update
+
+sudo apt install --no-install-recommends -y gnome-shell gnome-session gdm3 nautilus gnome-terminal gnome-calculator gnome-calendar eog evince gnome-system-monitor gnome-screenshot gnome-tweaks gnome-disk-utility network-manager-gnome nautilus-share samba gedit gdeb gparted synaptic gnome-software file-roller gzip bzip2 xz-utils zip unzip tar p7zip-full lz4 zstd rar unrar firmware-iwlwifi firmware-realtek firmware-atheros firmware-brcm80211 firmware-mediatek bluez blueman rfkill hplip cups ttf-mscorefonts-installer gnome-font-viewer gnome-characters gnome-clocks gnome-contacts vlc rhythmbox evolution gnome-software-plugin-flatpak gnome-software-plugin-snap gnome-software-plugin-deb gnome-software-plugin-fwupd gnome-software-common gnome-software-dev gnome-software-doc snapd linux-firmware mesa-utils xserver-xorg xserver-xorg-core xserver-xorg-video-all xserver-xorg-input-all hwinfo usbutils pciutils smartmontools lm-sensors arc-theme yaru-theme-gtk yaru-theme-icon yaru-theme-sound suru-icon-theme numix-icon-theme numix-gtk-theme
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+echo "✅ Instalação concluída! Reinicie o sistema para aplicar todas as mudanças."
+EOF
+
+chmod +x casa-gnome/usr/local/bin/casa-instalar.sh
+
+dpkg-deb --build casa-gnome
