@@ -1,0 +1,1 @@
+dpkg-deb -b /caminho da pastacontendo/DEBIAN  /etc
