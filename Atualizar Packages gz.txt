@@ -1,3 +1,4 @@
-cd ~/debs
+cd pasta dos debs
 dpkg-scanpackages . /dev/null > Packages
-gzip -9c Packages > Packages.gz
+gzip -k -f Packages
+apt-ftparchive release . > Release
