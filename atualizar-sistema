@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Script de atualização pesada
+# Autor: Casa Linux
+# Versão: 1.1
+
+# Verifica se está sendo executado como root
+if [[ $EUID -ne 0 ]]; then
+   echo "Este script precisa ser executado como root. Use sudo."
+   exit 1
+fi
+
+echo "------------------------------------------------------------"
+echo " Iniciando atualização pesada do sistema (stable)"
+echo "------------------------------------------------------------"
+sleep 2
+
+# Atualiza a lista de pacotes
+echo "[1/5] Atualizando lista de pacotes..."
+apt update
+
+# Realiza upgrade dos pacotes instalados
+echo "[2/5] Realizando upgrade..."
+apt upgrade -y
+
+# Realiza dist-upgrade (permite substituições e instalação/removal de dependências)
+echo "[3/5] Realizando dist-upgrade..."
+apt dist-upgrade -y
+
+# Remove pacotes desnecessários
+echo "[4/5] Removendo pacotes não utilizados..."
+apt autoremove -y
+
+# Limpa cache local de pacotes
+echo "[5/5] Limpando cache de pacotes..."
+apt clean
+
+echo "------------------------------------------------------------"
+echo " Atualização concluída com sucesso."
+echo " É recomendável reiniciar o sistema se houver atualizações críticas."
+echo "------------------------------------------------------------"
+
