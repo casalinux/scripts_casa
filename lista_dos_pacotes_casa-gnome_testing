@@ -1,2 +1,2 @@
-sudo apt install --no-install-recommends -y atualizar-sistema casa-gnome casa-hw-detector casalinux-tema-plymouth maria-lucia-font neofetch remasterizador-casa sistema-apt-casa-testing firefox-casa-apt firefox firefox-l10n-pt-br linux-image-unsigned*
+sudo apt install --no-install-recommends -y atualizar-sistema casa-gnome casa-hw-detector casalinux-tema-plymouth maria-lucia-font neofetch remasterizador-casa sistema-apt-casa-testing firefox-casa-apt firefox firefox-l10n-pt-br linux-image-unsigned* gnome-shell-extension-appindicator gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-shell-extension-user-theme gnome-shell-extension-weather gnome-shell-extensions
 
