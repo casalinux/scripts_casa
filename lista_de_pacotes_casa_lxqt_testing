@@ -1,2 +1,1 @@
-sudo apt install --no-install-recommends -y atualizar-sistema casa-lxqt casa-hw-detector casalinux-tema-plymouth maria-lucia-font neofetch remasterizador-casa sistema-apt-casa-testing firefox-casa-apt firefox firefox-l10n-pt-br
-
+sudo apt install --no-install-recommends -y atualizar-sistema casa-lxqt casa-hw-detector casalinux-tema-plymouth maria-lucia-font neofetch remasterizador-casa sistema-apt-casa-testing firefox-casa-apt firefox firefox-l10n-pt-br linux-image-unsigned*
